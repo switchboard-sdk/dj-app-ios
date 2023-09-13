@@ -10,7 +10,7 @@ import SwitchboardSuperpowered
 
 class MainAudioSystem {
     let audioGraph = SBAudioGraph()
-    let audioPlayerNodeA = SBAdvancedAudioPlayerNode()
+    let audioPlayerNodeAWithMasterControl = SBAdvancedAudioPlayerNode()
     let audioPlayerNodeB = SBAdvancedAudioPlayerNode()
     let gainNodeA = SBGainNode()
     let gainNodeB = SBGainNode()
@@ -26,15 +26,11 @@ class MainAudioSystem {
     let audioEngine = SBAudioEngine()
 
     init() {
-        audioPlayerNodeA.isLoopingEnabled = true
-        audioPlayerNodeB.isLoopingEnabled = true
-
-        audioGraph.addNode(audioPlayerNodeA)
+        audioGraph.addNode(audioPlayerNodeAWithMasterControl)
         audioGraph.addNode(audioPlayerNodeB)
         audioGraph.addNode(mixerNode)
         audioGraph.addNode(gainNodeA)
         audioGraph.addNode(gainNodeB)
-
         audioGraph.addNode(compressorNodeA)
         audioGraph.addNode(compressorNodeB)
         audioGraph.addNode(flangerNodeA)
@@ -44,21 +40,24 @@ class MainAudioSystem {
         audioGraph.addNode(filterNodeA)
         audioGraph.addNode(filterNodeB)
 
-        audioGraph.connect(audioPlayerNodeA, to: gainNodeA)
+        audioGraph.connect(audioPlayerNodeAWithMasterControl, to: gainNodeA)
         audioGraph.connect(gainNodeA, to: compressorNodeA)
         audioGraph.connect(compressorNodeA, to: flangerNodeA)
         audioGraph.connect(flangerNodeA, to: reverbNodeA)
         audioGraph.connect(reverbNodeA, to: filterNodeA)
         audioGraph.connect(filterNodeA, to: mixerNode)
-
         audioGraph.connect(audioPlayerNodeB, to: gainNodeB)
         audioGraph.connect(gainNodeB, to: compressorNodeB)
         audioGraph.connect(compressorNodeB, to: flangerNodeB)
         audioGraph.connect(flangerNodeB, to: reverbNodeB)
         audioGraph.connect(reverbNodeB, to: filterNodeB)
         audioGraph.connect(filterNodeB, to: mixerNode)
-
         audioGraph.connect(mixerNode, to: audioGraph.outputNode)
+        
+        audioPlayerNodeAWithMasterControl.isLoopingEnabled = true
+        audioPlayerNodeB.isLoopingEnabled = true
+        audioPlayerNodeAWithMasterControl.setNodeToSyncWith(playerNode)
+        
         audioEngine.start(audioGraph)
     }
     
@@ -72,35 +71,51 @@ class MainAudioSystem {
     
     func pausePlayback() {
         audioGraph.stop()
-        audioPlayerNodeA.pause()
+        audioPlayerNodeAWithMasterControl.pause()
         audioPlayerNodeB.pause()
     }
 
     func startPlayback() {
-        audioPlayerNodeA.play()
-        audioPlayerNodeB.play()
+        if audioPlayerNodeAWithMasterControl.isMaster {
+            audioPlayerNodeAWithMasterControl.play()
+            audioPlayerNodeB.playSynchronized()
+        } else {
+            audioPlayerNodeAWithMasterControl.playSynchronized()
+            audioPlayerNodeB.play()
+        }
+
         audioGraph.start()
     }
 
     func loadA(path: String) {
-        audioPlayerNodeA.load(path)
+        audioPlayerNodeAWithMasterControl.load(path)
     }
 
     func loadB(path: String) {
         audioPlayerNodeB.load(path)
     }
     
+    func setBeatGridInformationA(originalBPM: Double, firstBeatMs: Double) {
+        audioPlayerNodeAWithMasterControl.setBeatGridInformationWithOriginalBPM(originalBPM, firstBeatMs: firstBeatMs)
+    }
+    
+    func setBeatGridInformationB(originalBPM: Double, firstBeatMs: Double) {
+        audioPlayerNodeB.setBeatGridInformationWithOriginalBPM(originalBPM, firstBeatMs: firstBeatMs)
+    }
+    
     func isPlaying() -> Bool {
-        return audioPlayerNodeA.isPlaying || audioPlayerNodeB.isPlaying
+        return audioPlayerNodeAWithMasterControl.isPlaying || audioPlayerNodeB.isPlaying
     }
     
     func setCrossfader(value: Float, volumeA: Float, volumeB: Float) {
         gainNodeA.gain = volumeA * cosf(Float.pi / 2 * value)
         gainNodeB.gain = volumeB * cosf(Float.pi / 2 * (1 - value))
+        
+        audioPlayerNodeAWithMasterControl.isMaster = value <= 0.5
     }
     
     func setPlaybackRateA(rate: Float) {
-        audioPlayerNodeA.playbackRate = Double(rate)
+        audioPlayerNodeAWithMasterControl.playbackRate = Double(rate)
     }
     
     func setPlaybackRateB(rate: Float) {
@@ -146,5 +161,4 @@ class MainAudioSystem {
     func enableReverbB(enable: Bool) {
         reverbNodeB.isEnabled = enable
     }
-    
 }

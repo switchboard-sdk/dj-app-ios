@@ -28,10 +28,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        audioSystem.loadA(path: Bundle.main.url(forResource: "lycka", withExtension: "mp3")!.absoluteString)
-        audioSystem.loadB(path: Bundle.main.url(forResource: "nuyorica", withExtension: "m4a")!.absoluteString)
-        
-        playbackRateSliderA.value = Float(audioSystem.audioPlayerNodeA.playbackRate)
+        playbackRateSliderA.value = Float(audioSystem.audioPlayerNodeAWithMasterControl.playbackRate)
         volumeSliderA.value = audioSystem.gainNodeA.gain
         
         playbackRateSliderB.value = Float(audioSystem.audioPlayerNodeB.playbackRate)
@@ -46,6 +43,14 @@ class ViewController: UIViewController {
         reverbBSwitch.isOn = audioSystem.reverbNodeB.isEnabled
         flangerBSwitch.isOn = audioSystem.flangerNodeB.isEnabled
         filterBSwitch.isOn = audioSystem.filterNodeB.isEnabled
+        
+        audioSystem.loadA(path: Bundle.main.url(forResource: "lycka", withExtension: "mp3")!.absoluteString)
+        audioSystem.loadB(path: Bundle.main.url(forResource: "nuyorica", withExtension: "m4a")!.absoluteString)
+        
+        audioSystem.setBeatGridInformationA(originalBPM: 126, firstBeatMs: 353)
+        audioSystem.setBeatGridInformationB(originalBPM: 123, firstBeatMs: 40)
+        
+        audioSystem.setCrossfader(value: 0.0, volumeA: volumeSliderA.value, volumeB: volumeSliderB.value)
 
         audioSystem.start()
     }
