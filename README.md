@@ -26,8 +26,6 @@ The app has the following **features**:
 
 The main screen features volume and effect controls for both tracks, as well as a crossfader that allows for smooth transitions between the tracks.
 
-<img src="./img/dj-app-main-screen.png" width="640" />
-
 #### Audio Graph
 
 The audio graph for the Main screen has the following structure:
