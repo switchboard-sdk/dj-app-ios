@@ -36,13 +36,16 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="342" height="47.666666666666664"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mKr-cW-2zA">
-                                                                <rect key="frame" x="0.0" y="0.0" width="30.666666666666668" height="47.666666666666664"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="26.666666666666668" height="47.666666666666664"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dys-xJ-S9I">
-                                                                <rect key="frame" x="36.666666666666657" y="0.0" width="307.33333333333337" height="48.666666666666664"/>
+                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="dys-xJ-S9I" userLabel="Playback Rate Slider A">
+                                                                <rect key="frame" x="32.666666666666657" y="0.0" width="311.33333333333337" height="48.666666666666664"/>
+                                                                <connections>
+                                                                    <action selector="playbackRateAChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cat-Gg-kfo"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                     </stackView>
@@ -58,8 +61,11 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FhH-v1-9p9" userLabel="CompressorSwitchA">
+                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FhH-v1-9p9" userLabel="Compressor A">
                                                                         <rect key="frame" x="85.666666666666657" y="9.3333333333333286" width="87.333333333333343" height="31"/>
+                                                                        <connections>
+                                                                            <action selector="compressorASwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="nId-gB-BaC"/>
+                                                                        </connections>
                                                                     </switch>
                                                                 </subviews>
                                                             </stackView>
@@ -72,8 +78,11 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W87-HY-4cu" userLabel="ReverbSwitchA">
+                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W87-HY-4cu" userLabel="Reverb A">
                                                                         <rect key="frame" x="85.666666666666686" y="9.3333333333333286" width="87.333333333333314" height="31"/>
+                                                                        <connections>
+                                                                            <action selector="reverbASwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="VRS-8Q-NQU"/>
+                                                                        </connections>
                                                                     </switch>
                                                                 </subviews>
                                                             </stackView>
@@ -91,8 +100,11 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DIQ-tg-RGi">
+                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DIQ-tg-RGi" userLabel="Flanger A">
                                                                         <rect key="frame" x="85.666666666666657" y="9" width="87.333333333333343" height="31"/>
+                                                                        <connections>
+                                                                            <action selector="flangerASwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="MkH-B1-0eB"/>
+                                                                        </connections>
                                                                     </switch>
                                                                 </subviews>
                                                             </stackView>
@@ -105,8 +117,11 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wAS-wT-TdS">
+                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wAS-wT-TdS" userLabel="Fliter A">
                                                                         <rect key="frame" x="85.666666666666686" y="9" width="87.333333333333314" height="31"/>
+                                                                        <connections>
+                                                                            <action selector="filterASwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="fNF-A8-BG7"/>
+                                                                        </connections>
                                                                     </switch>
                                                                 </subviews>
                                                             </stackView>
@@ -116,13 +131,16 @@
                                                         <rect key="frame" x="0.0" y="146.33333333333334" width="342" height="47.666666666666657"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Re-jK-lLF">
-                                                                <rect key="frame" x="0.0" y="0.0" width="8" height="47.666666666666664"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="24" height="47.666666666666664"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="V49-nH-ofD">
-                                                                <rect key="frame" x="14" y="0.0" width="330" height="48.666666666666664"/>
+                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="V49-nH-ofD" userLabel="Volume Slider A">
+                                                                <rect key="frame" x="30" y="0.0" width="314" height="48.666666666666664"/>
+                                                                <connections>
+                                                                    <action selector="volumeSliderChangedA:" destination="BYZ-38-t0r" eventType="valueChanged" id="8Kz-Bi-I1Y"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                     </stackView>
@@ -135,13 +153,16 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="342" height="47.666666666666664"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oV6-iI-XRC">
-                                                                <rect key="frame" x="0.0" y="0.0" width="19.666666666666668" height="47.666666666666664"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="22.666666666666668" height="47.666666666666664"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="WJ8-Xc-Edc">
-                                                                <rect key="frame" x="25.666666666666686" y="0.0" width="318.33333333333331" height="48.666666666666664"/>
+                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="WJ8-Xc-Edc" userLabel="Playback Rate Slider B">
+                                                                <rect key="frame" x="28.666666666666686" y="0.0" width="315.33333333333331" height="48.666666666666664"/>
+                                                                <connections>
+                                                                    <action selector="playbackRateBChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="V0M-51-d5d"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                     </stackView>
@@ -157,8 +178,11 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YLL-lg-DZZ">
+                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YLL-lg-DZZ" userLabel="Compressor B">
                                                                         <rect key="frame" x="85.666666666666686" y="9.3333333333333286" width="87.333333333333314" height="31"/>
+                                                                        <connections>
+                                                                            <action selector="compressorBSwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="wfG-9Q-8tt"/>
+                                                                        </connections>
                                                                     </switch>
                                                                 </subviews>
                                                             </stackView>
@@ -171,8 +195,11 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uj3-uQ-h6P">
+                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uj3-uQ-h6P" userLabel="Reverb B">
                                                                         <rect key="frame" x="85.666666666666629" y="9.3333333333333286" width="87.333333333333314" height="31"/>
+                                                                        <connections>
+                                                                            <action selector="reverbBSwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="GAg-S0-fGt"/>
+                                                                        </connections>
                                                                     </switch>
                                                                 </subviews>
                                                             </stackView>
@@ -190,8 +217,11 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="riB-WK-jx8">
+                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="riB-WK-jx8" userLabel="Flanger B">
                                                                         <rect key="frame" x="85.666666666666686" y="9" width="87.333333333333314" height="31"/>
+                                                                        <connections>
+                                                                            <action selector="flangerBSwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="0KR-az-Ify"/>
+                                                                        </connections>
                                                                     </switch>
                                                                 </subviews>
                                                             </stackView>
@@ -204,8 +234,11 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MZa-o9-khi">
+                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MZa-o9-khi" userLabel="Filter B">
                                                                         <rect key="frame" x="85.666666666666629" y="9" width="87.333333333333314" height="31"/>
+                                                                        <connections>
+                                                                            <action selector="filterBSwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="ncy-qG-90h"/>
+                                                                        </connections>
                                                                     </switch>
                                                                 </subviews>
                                                             </stackView>
@@ -215,13 +248,16 @@
                                                         <rect key="frame" x="0.0" y="146.33333333333334" width="342" height="47.666666666666657"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vol" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWs-ZZ-yOZ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="24" height="47.666666666666664"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="47.666666666666664"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ybY-0f-TJO">
-                                                                <rect key="frame" x="30" y="0.0" width="314" height="48.666666666666664"/>
+                                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ybY-0f-TJO" userLabel="Volume Slider B">
+                                                                <rect key="frame" x="26" y="0.0" width="318" height="48.666666666666664"/>
+                                                                <connections>
+                                                                    <action selector="volumeSliderBChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Nw5-6L-5ZW"/>
+                                                                </connections>
                                                             </slider>
                                                         </subviews>
                                                     </stackView>
@@ -234,8 +270,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mbr-1h-Q4H" userLabel="Crossfader and play Stack">
                                 <rect key="frame" x="140" y="254" width="532" height="90"/>
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Eng-L8-FnM">
+                                    <slider opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Eng-L8-FnM" userLabel="Crossfader Slider">
                                         <rect key="frame" x="-2" y="0.0" width="536" height="56.666666666666664"/>
+                                        <connections>
+                                            <action selector="crossfaderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="J8U-Ir-njZ"/>
+                                        </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMa-4j-FTu">
                                         <rect key="frame" x="0.0" y="55.666666666666686" width="532" height="34.333333333333343"/>
@@ -263,6 +302,22 @@
                             <constraint firstItem="mbr-1h-Q4H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="xo1-cW-ue0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="compressorASwitch" destination="FhH-v1-9p9" id="mim-Ql-E8a"/>
+                        <outlet property="compressorBSwitch" destination="YLL-lg-DZZ" id="Vtw-zM-cAP"/>
+                        <outlet property="crossfaderSlider" destination="Eng-L8-FnM" id="9eA-7q-wgK"/>
+                        <outlet property="filterASwitch" destination="wAS-wT-TdS" id="Kc5-Zc-cUj"/>
+                        <outlet property="filterBSwitch" destination="MZa-o9-khi" id="isR-HM-FWP"/>
+                        <outlet property="flangerASwitch" destination="DIQ-tg-RGi" id="byi-ry-wGP"/>
+                        <outlet property="flangerBSwitch" destination="riB-WK-jx8" id="yVK-ec-gXS"/>
+                        <outlet property="playPauseButton" destination="RMa-4j-FTu" id="fVT-q0-Lac"/>
+                        <outlet property="playbackRateSliderA" destination="dys-xJ-S9I" id="C2T-FH-RMe"/>
+                        <outlet property="playbackRateSliderB" destination="WJ8-Xc-Edc" id="kOx-Bh-gWL"/>
+                        <outlet property="reverbASwitch" destination="W87-HY-4cu" id="Rnp-EI-Fq6"/>
+                        <outlet property="reverbBSwitch" destination="uj3-uQ-h6P" id="9MF-Sb-2Wj"/>
+                        <outlet property="volumeSliderA" destination="V49-nH-ofD" id="jQM-XU-VL0"/>
+                        <outlet property="volumeSliderB" destination="ybY-0f-TJO" id="J8l-Rc-lib"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

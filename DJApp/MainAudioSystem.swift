@@ -93,4 +93,58 @@ class MainAudioSystem {
     func isPlaying() -> Bool {
         return audioPlayerNodeA.isPlaying || audioPlayerNodeB.isPlaying
     }
+    
+    func setCrossfader(value: Float, volumeA: Float, volumeB: Float) {
+        gainNodeA.gain = volumeA * cosf(Float.pi / 2 * value)
+        gainNodeB.gain = volumeB * cosf(Float.pi / 2 * (1 - value))
+    }
+    
+    func setPlaybackRateA(rate: Float) {
+        audioPlayerNodeA.playbackRate = Double(rate)
+    }
+    
+    func setPlaybackRateB(rate: Float) {
+        audioPlayerNodeB.playbackRate = Double(rate)
+    }
+    
+    func setVolumeA(volume: Float) {
+        gainNodeA.gain = volume
+    }
+    
+    func setVolumeB(volume: Float) {
+        gainNodeB.gain = volume
+    }
+    
+    func enableFilterA(enable: Bool) {
+        filterNodeA.isEnabled = enable
+    }
+    
+    func enableFlangerA(enable: Bool) {
+        flangerNodeA.isEnabled = enable
+    }
+    
+    func enableCompressorA(enable: Bool) {
+        compressorNodeA.isEnabled = enable
+    }
+    
+    func enableReverbA(enable: Bool) {
+        reverbNodeA.isEnabled = enable
+    }
+    
+    func enableFilterB(enable: Bool) {
+        filterNodeB.isEnabled = enable
+    }
+    
+    func enableFlangerB(enable: Bool) {
+        flangerNodeB.isEnabled = enable
+    }
+    
+    func enableCompressorB(enable: Bool) {
+        compressorNodeB.isEnabled = enable
+    }
+    
+    func enableReverbB(enable: Bool) {
+        reverbNodeB.isEnabled = enable
+    }
+    
 }
