@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import SwitchboardSDK
+import SwitchboardSuperpowered
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        SBSwitchboardSDK.initialize(withClientID: Config.clientID, clientSecret: Config.clientSecret)
+        SBSuperpoweredExtension.initialize(withLicenseKey: Config.superpoweredLicenseKey)
         return true
     }
 

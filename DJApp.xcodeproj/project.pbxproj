@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A128C3D62AAF5D0000AD99B5 /* MainAudioSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A128C3D52AAF5D0000AD99B5 /* MainAudioSystem.swift */; };
 		A19337182AAF3F5C00F49633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19337172AAF3F5C00F49633 /* AppDelegate.swift */; };
 		A193371A2AAF3F5C00F49633 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19337192AAF3F5C00F49633 /* SceneDelegate.swift */; };
 		A193371C2AAF3F5C00F49633 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A193371B2AAF3F5C00F49633 /* ViewController.swift */; };
 		A193371F2AAF3F5C00F49633 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A193371D2AAF3F5C00F49633 /* Main.storyboard */; };
 		A19337212AAF3F5E00F49633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A19337202AAF3F5E00F49633 /* Assets.xcassets */; };
 		A19337242AAF3F5E00F49633 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A19337222AAF3F5E00F49633 /* LaunchScreen.storyboard */; };
+		A193372D2AAF491900F49633 /* SwitchboardSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A193372C2AAF491900F49633 /* SwitchboardSDK */; };
+		A193372F2AAF491900F49633 /* SwitchboardSuperpowered in Frameworks */ = {isa = PBXBuildFile; productRef = A193372E2AAF491900F49633 /* SwitchboardSuperpowered */; };
+		A19337312AAF497600F49633 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19337302AAF497600F49633 /* Config.swift */; };
+		A19A182C2AB0622200B542F5 /* nuyorica.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A19A182A2AB0622100B542F5 /* nuyorica.m4a */; };
+		A19A182D2AB0622200B542F5 /* lycka.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A19A182B2AB0622200B542F5 /* lycka.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A128C3D52AAF5D0000AD99B5 /* MainAudioSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAudioSystem.swift; sourceTree = "<group>"; };
 		A19337142AAF3F5C00F49633 /* DJApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DJApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A19337172AAF3F5C00F49633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A19337192AAF3F5C00F49633 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +31,9 @@
 		A19337202AAF3F5E00F49633 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A19337232AAF3F5E00F49633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A19337252AAF3F5E00F49633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A19337302AAF497600F49633 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		A19A182A2AB0622100B542F5 /* nuyorica.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = nuyorica.m4a; sourceTree = "<group>"; };
+		A19A182B2AB0622200B542F5 /* lycka.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lycka.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A193372F2AAF491900F49633 /* SwitchboardSuperpowered in Frameworks */,
+				A193372D2AAF491900F49633 /* SwitchboardSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +68,7 @@
 		A19337162AAF3F5C00F49633 /* DJApp */ = {
 			isa = PBXGroup;
 			children = (
+				A19A18292AB061ED00B542F5 /* AudioFiles */,
 				A19337172AAF3F5C00F49633 /* AppDelegate.swift */,
 				A19337192AAF3F5C00F49633 /* SceneDelegate.swift */,
 				A193371B2AAF3F5C00F49633 /* ViewController.swift */,
@@ -63,8 +76,19 @@
 				A19337202AAF3F5E00F49633 /* Assets.xcassets */,
 				A19337222AAF3F5E00F49633 /* LaunchScreen.storyboard */,
 				A19337252AAF3F5E00F49633 /* Info.plist */,
+				A19337302AAF497600F49633 /* Config.swift */,
+				A128C3D52AAF5D0000AD99B5 /* MainAudioSystem.swift */,
 			);
 			path = DJApp;
+			sourceTree = "<group>";
+		};
+		A19A18292AB061ED00B542F5 /* AudioFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A19A182B2AB0622200B542F5 /* lycka.mp3 */,
+				A19A182A2AB0622100B542F5 /* nuyorica.m4a */,
+			);
+			path = AudioFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +107,10 @@
 			dependencies = (
 			);
 			name = DJApp;
+			packageProductDependencies = (
+				A193372C2AAF491900F49633 /* SwitchboardSDK */,
+				A193372E2AAF491900F49633 /* SwitchboardSuperpowered */,
+			);
 			productName = DJApp;
 			productReference = A19337142AAF3F5C00F49633 /* DJApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +139,9 @@
 				Base,
 			);
 			mainGroup = A193370B2AAF3F5C00F49633;
+			packageReferences = (
+				A193372B2AAF491800F49633 /* XCRemoteSwiftPackageReference "switchboard-sdk-ios" */,
+			);
 			productRefGroup = A19337152AAF3F5C00F49633 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +158,8 @@
 			files = (
 				A19337242AAF3F5E00F49633 /* LaunchScreen.storyboard in Resources */,
 				A19337212AAF3F5E00F49633 /* Assets.xcassets in Resources */,
+				A19A182D2AB0622200B542F5 /* lycka.mp3 in Resources */,
+				A19A182C2AB0622200B542F5 /* nuyorica.m4a in Resources */,
 				A193371F2AAF3F5C00F49633 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +171,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A128C3D62AAF5D0000AD99B5 /* MainAudioSystem.swift in Sources */,
 				A193371C2AAF3F5C00F49633 /* ViewController.swift in Sources */,
+				A19337312AAF497600F49633 /* Config.swift in Sources */,
 				A19337182AAF3F5C00F49633 /* AppDelegate.swift in Sources */,
 				A193371A2AAF3F5C00F49633 /* SceneDelegate.swift in Sources */,
 			);
@@ -293,8 +328,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -321,8 +355,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationLandscapeRight;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +391,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A193372B2AAF491800F49633 /* XCRemoteSwiftPackageReference "switchboard-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/switchboard-sdk/switchboard-sdk-ios";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A193372C2AAF491900F49633 /* SwitchboardSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A193372B2AAF491800F49633 /* XCRemoteSwiftPackageReference "switchboard-sdk-ios" */;
+			productName = SwitchboardSDK;
+		};
+		A193372E2AAF491900F49633 /* SwitchboardSuperpowered */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A193372B2AAF491800F49633 /* XCRemoteSwiftPackageReference "switchboard-sdk-ios" */;
+			productName = SwitchboardSuperpowered;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A193370C2AAF3F5C00F49633 /* Project object */;
 }
