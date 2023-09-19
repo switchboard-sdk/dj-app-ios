@@ -56,7 +56,7 @@ class MainAudioSystem {
         
         audioPlayerNodeAWithMasterControl.isLoopingEnabled = true
         audioPlayerNodeB.isLoopingEnabled = true
-        audioPlayerNodeAWithMasterControl.setNodeToSyncWith(playerNode)
+        audioPlayerNodeAWithMasterControl.setNodeToSyncWith(audioPlayerNodeB)
         
         audioEngine.start(audioGraph)
     }
